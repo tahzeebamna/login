@@ -10,17 +10,9 @@ const [getInput, setGetInput] = useState({
   pswrd:"",
 })  
 
-
-
-
-    const InputEvent = (event) =>{
-          setGetInput(event.target.value)
-          setGetInput(event.target.name)
-
-          const {   name , value } = event.target;
-
-
-          setGetInput((preval)=>{
+const InputEvent = (event) =>{
+const {   name , value } = event.target;
+setGetInput((preval)=>{
             return{
               ...preval,
               [name]:value

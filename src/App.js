@@ -13,8 +13,8 @@ function App() {
     <BrowserRouter>
       <div>
         <Switch>
-            <Route path="/" exact component={SignUp}/>
-            <Route path="/Register" exact component={Register}/>  
+            <Route path="/signUp"  component={SignUp}/>
+            <Route path="/"  component={Register}/>  
       </Switch>
 
       
