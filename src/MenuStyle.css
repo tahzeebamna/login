@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.styleMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: aqua;
+    height: 400px;
+    width: 300px; 
+    border: 4px aqua ;
+    box-shadow: 4px 4px 5px 4px solid rgb(14, 13, 13);
+    margin-left: 40%;
+    margin-top:10%;
+   
+    
+}
+form{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+    
+}
+.username{
+    padding: 10px;
+}
+.password{
+    padding: 10px;
+}
+input{
+    text-decoration: none;
+    outline: none;
+    padding: 6px 8px;
+    border-radius: 5px;
+    border: none;
+}
