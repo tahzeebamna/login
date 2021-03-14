@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './MenuStyle.css';
-import login from './Login'
+import Login from './Login';
+import { useHistory } from 'react-router-dom';
 
 
 
-function Register() {
-    const [inputText, setInputText] = useState(
-        {
-            userName:"",
-            userEmail:"",
-            pswrd:"",
-            number:""
-
-        }
-    )
-    const [record, setRecord] = useState([])
+function Register({inputText , setInputText,setRecord, record}) {
+    const history = useHistory();
+    
+    
     const InputEvent2 = (event) =>{
         const{name, value} = event.target
         setInputText((oldVAl)=>{
@@ -28,11 +22,12 @@ function Register() {
         // we have alternative way for storing the previous value
         // setInputText({...inputText , [name]:value})
     }
-    const submitEvent = (e) =>{
+
+        
+    const SubmitEvent = (e) =>{
         e.preventDefault();
         const NewRecords ={...inputText, id:new Date().getTime().toString}
         console.log(record);
-
         setRecord([...record, NewRecords])
         setInputText({userName:" ", userEmail:" ",pswrd:" ",number:" "});
         
@@ -84,7 +79,8 @@ function Register() {
                 </div>
                     <br/>
                 
-                <button type="submit" onClick={submitEvent}>SignUp</button>
+                <button type="submit" onClick={SubmitEvent , history.push("./login")}
+                 >SignUp</button>
             </form>
             
             <div className="showRecord">
@@ -96,12 +92,11 @@ function Register() {
                     const {id, userName,userEmail,pswrd,number} = currVal
                     return(
                         <div className="registerData" key={id}>
-                              
-                            <h1>{userName}</h1>
-                            <h1>{userEmail}</h1>                            
-                            <h1>{pswrd}</h1>                            
-                            <h1>{number}</h1>       
-                            <Login/>                       
+                            <Login userName={userName}
+                                 userEmail = {userEmail}
+                                 pswrd = {pswrd}
+                                 number ={number}
+                                 />                      
                         </div>
                     )
               })}
